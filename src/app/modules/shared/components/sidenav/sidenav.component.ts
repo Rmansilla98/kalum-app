@@ -11,7 +11,7 @@ export class SidenavComponent implements OnInit {
   menuNav = [
     {name: 'Home', route:'home',icon: 'home'},
     {name: 'Carreras', route:'carreras',icon: 'category'},
-    {name: 'Examenes', route:'home',icon: 'calendar_today'}
+    {name: 'Examenes', route:'examenes',icon: 'calendar_today'}
   ]
 
   mobileQuery: MediaQueryList;
