@@ -1,1 +1,63 @@
-<p>carreras-tecnicas works!</p>
+<mat-card>
+    <h2 class="alinear">Listado de carreras técnicas</h2>
+    <mat-card-header>
+        <div>
+            <mat-form-field hintLabel="Buscar carrera" appearance="fill">
+                <mat-label>Buscar Carrera</mat-label>
+                <input matInput #input>
+            </mat-form-field>
+        </div>
+    </mat-card-header>
+
+    <mat-card-header>
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul fxLayout="row" fxLayoutGap="20px">
+                <li>
+                    <button mat-raised-button color="primary" (click)="openFormCarreraTecnica()">Agregar carrera</button>
+                </li>
+            </ul>
+
+        </div>
+    </mat-card-header>
+    <mat-card-content>
+        <table mat-table class="mat-cell" [dataSource]="dataSource">
+            <ng-container matColumnDef="no">
+                <th mat-header-cell *matHeaderCellDef>No.</th>
+                <td mat-cell *matCellDef="let elemento; index as row">
+                    <ng-container *ngIf="elemento">
+                       {{row+1}}
+                    </ng-container>  
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                <td mat-cell *matCellDef="let elemento">
+                    <ng-container *ngIf="elemento">
+                        {{elemento.nombre}}
+                    </ng-container>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="acciones">
+                <th mat-header-cell *matHeaderCellDef>Acciones</th>
+                <td mat-cell *matCellDef="let elemento; let i=index;">
+                    <button mat-icon-button color="primary" (click)="editFormCarreraTecnica(elemento.carreraId,elemento.nombre)">
+                        <mat-icon aria-label="Edit">
+                            edit
+                        </mat-icon>
+                    </button>
+                        <button mat-icon-button color="accent" (click)="deleteCarreraTecnica(elemento.carreraId)">
+                            <mat-icon aria-label="Delete">
+                                delete
+                            </mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayColumns"></tr>
+            
+        </table>
+        <mat-paginator [pageSizeOptions]="[5,10,20]"showFristLastButtons></mat-paginator>
+
+    </mat-card-content>
+</mat-card>

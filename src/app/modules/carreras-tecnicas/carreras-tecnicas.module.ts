@@ -4,12 +4,14 @@ import { CarrerasTecnicasComponent } from './components/carreras-tecnicas/carrer
 import { MaterialModule } from '../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormCarreraTecnicaComponent } from './components/carreras-tecnicas/form-carrera-tecnica.component';
 
 
 
 @NgModule({
   declarations: [
-    CarrerasTecnicasComponent
+    CarrerasTecnicasComponent,
+    FormCarreraTecnicaComponent
   ],
   imports: [
     CommonModule,
