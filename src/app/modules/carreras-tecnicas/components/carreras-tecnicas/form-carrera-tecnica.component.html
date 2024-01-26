@@ -11,7 +11,7 @@
     </form>
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button mat-button color="primary" (click)="onSave()">
+    <button mat-button color="primary" (click)="onSave()"[disabled]="carreraTecnicaFormGroup.invalid">
         <mat-icon>save</mat-icon>Guardar
     </button>
     <button mat-button color="primary" (click)="onCancel()">

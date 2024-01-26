@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CarreraTecnica } from '../../carreras-tecnicas/model/carrera-tecnica.model';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/app/environments/environment.prod';
+import { environment } from 'src/app/environments/environment';
 
 const BASE_URL = `${environment.BASE_URL_KALUM_MANAGEMENT}/v1`
 

@@ -1,0 +1,59 @@
+<h2 mat-dialog-title>
+    Solicitud de expediente
+</h2>
+<mat-dialog-content>
+    <form [formGroup]="formRegisterAspirante">
+        <div class="form-container">
+            <mat-form-field>
+                <input formControlName="apellidos" matInput placeholder="Apellidos" required>
+            </mat-form-field>
+        </div>
+        <div class="form-container">
+            <mat-form-field>
+                <input formControlName="nombres" matInput placeholder="Nombres" required>
+            </mat-form-field>
+        </div>
+        <div class="form-container">
+            <mat-form-field>
+                <input formControlName="email" type="email" matInput placeholder="Email" required>
+            </mat-form-field>
+        </div>
+        <div class="form-container">
+            <mat-form-field>
+                <input formControlName="telefono" matInput placeholder="Telefono" required>
+            </mat-form-field>
+        </div>
+        <div class="form-container">
+            <mat-form-field>
+                <input formControlName="direccion" matInput placeholder="Dirección" required>
+            </mat-form-field>
+        </div>
+        <div class="form-container">
+            <mat-form-field>
+                <mat-label>Carreras Técnicas</mat-label>
+                <mat-select formControlName="carreraId">
+
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+        <div class="form-container">
+            <mat-form-field>
+                <mat-label>Carreras Técnicas</mat-label>
+                <mat-select formControlName="carreraId">
+                   <mat-option *ngFor="let carrera of carrerasTecnicas" [value] = "carrera.carreraId">
+                        {{carrera.nombre}}
+                   </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button color="Primary">
+        <mat-icon>save</mat-icon> Guardar
+    </button>
+    <button mat-button color="Primary">
+        <mat-icon>cancel</mat-icon> Cancelar
+    </button>
+</mat-dialog-actions>

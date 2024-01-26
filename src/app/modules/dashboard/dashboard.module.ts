@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CarrerasTecnicasComponent } from '../carreras-tecnicas/components/carreras-tecnicas/carreras-tecnicas.component';
 import { CarrerasTecnicasModule } from '../carreras-tecnicas/carreras-tecnicas.module';
 import { ExamenesAdmisionModule } from '../examenes-admision/examenes-admision.module';
+import { LoginModule } from '../login/login.module';
 
 
 
@@ -22,7 +23,8 @@ import { ExamenesAdmisionModule } from '../examenes-admision/examenes-admision.m
     SharedModule,
     MaterialModule,
     CarrerasTecnicasModule,
-    ExamenesAdmisionModule
+    ExamenesAdmisionModule,
+    LoginModule
   ]
 })
 export class DashboardModule { }

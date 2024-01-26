@@ -5,13 +5,15 @@ import { MaterialModule } from '../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormCarreraTecnicaComponent } from './components/carreras-tecnicas/form-carrera-tecnica.component';
+import { FormRegisterAspiranteComponent } from './components/carreras-tecnicas/form-register-aspirante.component';
 
 
 
 @NgModule({
   declarations: [
     CarrerasTecnicasComponent,
-    FormCarreraTecnicaComponent
+    FormCarreraTecnicaComponent,
+    FormRegisterAspiranteComponent
   ],
   imports: [
     CommonModule,

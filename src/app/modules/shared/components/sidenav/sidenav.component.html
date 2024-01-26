@@ -7,21 +7,40 @@
                 <li>
                     <button mat-icon-button><mat-icon>help_outline</mat-icon></button>
                 </li>
-
-                <li>
-                    <button mat-icon-button><mat-icon>person_outline</mat-icon></button>
+                <li *ngIf="authService.isAuthenticated()">
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
+                        <mat-icon>
+                            person_outline
+                        </mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="logout()">
+                            <mat-icon>exit_to_app</mat-icon>
+                            cerrar sesión
+                        </button>
+                    </mat-menu>
+                </li>
+                <li *ngIf="!authService.isAuthenticated()">
+                    <button mat-icon-button [matMenuTriggerFor]="menuLogin">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menuLogin="matMenu">
+                        <button mat-menu-item (click)="openFormLogin()">
+                            <mat-icon>open_in_browser</mat-icon>
+                            Iniciar Sesión
+                        </button>
+                    </mat-menu>
                 </li>
             </ul>
         </div>
     </mat-toolbar>
-
     <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
         <mat-sidenav #snav fixedToGap="56" [mode]="mobileQuery.matches ? 'over': 'side'" [fixedInViewport]="mobileQuery.matches">
             <mat-nav-list>
                 <div class="profile-card">
                     <div class="header">
-                        <h2>Ronald Mansila</h2>
-                        <h4>rnldmansilla@gmail.com</h4>
+                        <h2>{{authService.isAuthenticated() ? authService.usuario.username : 'CAPACÍTATE'}}</h2>
+                        <h4>{{authService.isAuthenticated() ? authService.usuario.email : 'El trabajo bien hecho'}}</h4>
                     </div>
                     <mat-divider></mat-divider>
                 </div>
